@@ -1,0 +1,8 @@
+DROP PROCEDURE IF EXISTS CancelOrder;
+DELIMITER \\
+CREATE PROCEDURE CancelOrder(Id INT)
+BEGIN
+DELETE FROM orders WHERE OrderID=Id;
+SELECT CONCAT("Order ", Id," is cancelled") AS Confirmation;
+END\\
+DELIMITER ;
